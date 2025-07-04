@@ -5,7 +5,7 @@ import {
   ErrorPage,
   HomePage,
   EventsPage,
-  EventDetailPage,
+  EventDetailsPage,
   NewEventPage,
   EditEventPage,
   EventsLayout,
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         element: <EventsLayout />,
         children: [
           { index: true, element: <EventsPage /> },
-          { path: ":eventId", element: <EventDetailPage /> },
+          { path: ":eventId", element: <EventDetailsPage /> },
           { path: "new", element: <NewEventPage /> },
           { path: ":eventId/edit", element: <EditEventPage /> },
         ],
