@@ -1,40 +1,26 @@
+import { useLoaderData } from "react-router-dom";
+
 import { EventsList } from "../components";
 
-const EVENTS = [
-  {
-    id: "e1",
-    title: "A dummy event",
-    date: "2023-02-22",
-    image:
-      "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-    description: "Join this amazing event and connect with fellow developers.",
-  },
-
-  {
-    id: "e2",
-    title: "A dummy event 2",
-    date: "2023-02-22",
-    image:
-      "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-    description: "Join this amazing event and connect with fellow developers.",
-  },
-
-  {
-    id: "e3",
-    title: "A dummy event 3",
-    date: "2023-02-22",
-    image:
-      "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-    description: "Join this amazing event and connect with fellow developers.",
-  },
-];
-
 function EventsPage() {
+  const events = useLoaderData();
+
   return (
     <>
-      <EventsList events={EVENTS} />
+      <EventsList events={events} />
     </>
   );
 }
 
 export default EventsPage;
+
+export async function loader() {
+  const response = await fetch("http://localhost:8080/events");
+
+  if (!response.ok) {
+    ///
+  } else {
+    const resData = await response.json();
+    return resData.events;
+  }
+}

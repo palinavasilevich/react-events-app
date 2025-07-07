@@ -10,6 +10,7 @@ import {
   EditEventPage,
   EventsLayout,
 } from "../pages";
+import { loader as eventsLoader } from "../pages/Events";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
         path: "/events",
         element: <EventsLayout />,
         children: [
-          { index: true, element: <EventsPage /> },
+          {
+            index: true,
+            element: <EventsPage />,
+            loader: eventsLoader,
+          },
           { path: ":eventId", element: <EventDetailsPage /> },
           { path: "new", element: <NewEventPage /> },
           { path: ":eventId/edit", element: <EditEventPage /> },
