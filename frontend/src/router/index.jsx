@@ -12,6 +12,7 @@ import {
 } from "../pages";
 import { loader as eventsLoader } from "../pages/Events";
 import { loader as eventDetailsLoader } from "../pages/EventDetails";
+import { action as newEventAction } from "../pages/NewEvent";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
             ],
           },
 
-          { path: "new", element: <NewEventPage /> },
+          { path: "new", element: <NewEventPage />, action: newEventAction },
         ],
       },
     ],
