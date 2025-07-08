@@ -6,3 +6,4 @@ export { default as EventsPage } from "./Events";
 export { default as HomePage } from "./Home";
 export { default as NewEventPage } from "./NewEvent";
 export { default as EventsLayout } from "./Layouts/EventsLayout";
+export { default as NewsletterPage } from "./Newsletter";
