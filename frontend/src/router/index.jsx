@@ -11,6 +11,7 @@ import {
   EventsLayout,
 } from "../pages";
 import { loader as eventsLoader } from "../pages/Events";
+import { loader as eventDetailsLoader } from "../pages/EventDetails";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
             element: <EventsPage />,
             loader: eventsLoader,
           },
-          { path: ":eventId", element: <EventDetailsPage /> },
+          {
+            path: ":eventId",
+            element: <EventDetailsPage />,
+            loader: eventDetailsLoader,
+          },
           { path: "new", element: <NewEventPage /> },
           { path: ":eventId/edit", element: <EditEventPage /> },
         ],
