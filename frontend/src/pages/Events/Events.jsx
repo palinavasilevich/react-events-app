@@ -1,13 +1,13 @@
 import { Suspense } from "react";
 import { Await, useLoaderData } from "react-router-dom";
 
-import { EventsList } from "../../components";
+import { EventsList, Loader } from "../../components";
 
 function EventsPage() {
   const { events } = useLoaderData();
 
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<Loader />}>
       <Await resolve={events}>
         {(loadedEvents) => <EventsList events={loadedEvents} />}
       </Await>
