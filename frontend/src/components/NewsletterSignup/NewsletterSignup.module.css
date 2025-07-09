@@ -1,3 +1,9 @@
+.newsletter .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .newsletter input,
 .newsletter button {
   font: inherit;
@@ -15,4 +21,8 @@
 .newsletter button:hover {
   background-color: var(--color-primary-300);
   color: var(--color-gray-800);
+}
+
+.newsletter .errorText {
+  color: var(--color-error-text);
 }
