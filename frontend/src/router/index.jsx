@@ -11,13 +11,13 @@ import {
   EventsLayout,
   NewsletterPage,
 } from "../pages";
-import { loader as eventsLoader } from "../pages/Events";
-import {
-  action as deleteEventAction,
-  loader as eventDetailsLoader,
-} from "../pages/EventDetails";
+
+import { loader as eventDetailsLoader } from "../pages/EventDetails/loaders/eventDetailsLoader";
+import { loader as eventsLoader } from "../pages/Events/loaders/eventsLoader";
+
 import { action as eventAction } from "../components/EventForm/EventForm";
-import { action as newsletterAction } from "../pages/Newsletter";
+import { action as newsletterAction } from "../pages/Newsletter/actions/newsletterAction";
+import { action as deleteEventAction } from "../pages/EventDetails/actions/deleteEventAction";
 
 const router = createBrowserRouter([
   {
