@@ -15,7 +15,7 @@ import {
 import { loader as eventDetailsLoader } from "../pages/EventDetails/loaders/eventDetailsLoader";
 import { loader as eventsLoader } from "../pages/Events/loaders/eventsLoader";
 
-import { action as eventAction } from "../components/EventForm/EventForm";
+import { action as eventAction } from "../components/EventForm/actions/eventAction";
 import { action as newsletterAction } from "../pages/Newsletter/actions/newsletterAction";
 import { action as deleteEventAction } from "../pages/EventDetails/actions/deleteEventAction";
 
